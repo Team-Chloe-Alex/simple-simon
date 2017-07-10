@@ -1,13 +1,57 @@
+#wapper {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+h1 {
+	text-align: center;
+}
+
 #board {
 	margin: 0 auto;
 	background-color: #000;
-	width: 60%;
-	max-width: 500px;
+	width: 35%;
+	border-radius: 50%
 }
 
 .button {
-	width: 45%;
-	float: left;
+	width: 47%;
+	height: 150px;
+	margin: .2em;
+	display: inline-block;
 }
 
-#
+#green, #yellow {
+	margin-top: .4em;
+}
+
+#red, #blue {
+	margin-top: 0;
+}
+
+#yellow {
+	background-color: yellow;
+}
+
+#green {
+	background-color: green;
+}
+
+#red {
+	background-color: red;
+}
+
+#blue {
+	background-color: blue;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	bottom: -10em;
+}
+
+footer button, footer section {
+	display: inline;
+}
