@@ -1,0 +1,13 @@
+#board {
+	margin: 0 auto;
+	background-color: #000;
+	width: 60%;
+	max-width: 500px;
+}
+
+.button {
+	width: 45%;
+	float: left;
+}
+
+#
