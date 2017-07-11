@@ -115,23 +115,56 @@ h1 {
 		}
 }
 
-.text h2 {
+#gameOverText h2 {
 	position: relative;
-	top: -19.00em;
-	left: 1.2em;
+	top: -12em;
+	left: 1.22em;
+	font-size: 60px;
+	color: white;
+	font-family: 'Lobster Two', cursive;
+}
+
+#gameOverText h3 {
+	position: relative;
+	top: -18.88em;
+	left: .85em;
+	font-size: 40px;
+	color: white;
+
+}
+
+#gameOverText {
+
+	z-index: 2;
+}
+	/*position: fixed;
+	margin: 0 auto;
+	width: 400px;
+	height: 400px;
+	border-radius: 100%;
+	position: relative;
+	top: -24.60em;
+	display: none;
+}s
+
+#gameOverText h2 {
+	position: relative;
+	top: -5.00em;
+	left: 
 	font-size: 60px;
 	color: black;
 	
 }
 
-.text p {
+#gameOverText p {
 	position: relative;
-	top: -19.60em;
-	left: .5em;
+	top: -5.00em;
+	left: 
 	font-size: 40px;
-	color: white;
+	color: black;*/
+
 	
-}
+
 
 footer {
 	position: relative;
