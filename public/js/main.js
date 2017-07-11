@@ -10,10 +10,11 @@ $(document).ready(function() {
 
     var play = 0;
 
+    var clicks = 0;
+
     function nextMove() {
     	var random = Math.floor((Math.random() * 3) + 0);
     	sequence.push(buttons[random]);
-    	console.log("in nextMove and sequence equals " + sequence);
     	setTimeout(function(){
     		execute();	
     	}, 500);
@@ -30,45 +31,44 @@ $(document).ready(function() {
 			    }, 800 * i);
 	    	}(i));
 	    }
-    	console.log('in execute and sequence equals ' + sequence);
     	$('.button').toggleClass('active');
     	playGame();
     }
 
     function playGame() {
     	play = 0;
-
+    	$('.active').off();
+    	 
     	$('.active').click(function(event){
+    		
     		var that = this;
     		$('#' + $(this).attr('id')).css('opacity', .4);
 			setTimeout(function() {
 				$('#' + $(that).attr('id')).css('opacity', 1);
 			}, 300); 
-		
+			
     		if ('#' + $(this).attr('id') == sequence[play]) {
     			++play;
-    			console.log('adding 1 to play, play equals ' + play);
     		}
     		else {
-    			console.log($(this).attr('id'))
     			gameOver();
     		}
-
     		if (play == sequence.length) {
 		    	setTimeout(function(){
-			    	console.log("play = sequence? ... play = " + play + " and sequence = " + sequence.length);
 			    	play = 0;
 			    	$('.button').toggleClass('active');
 			    	++count;
-		    		$('.count').html(count);
+		    		$('#count').html(count);
 		    	}, 500, nextMove());
     		}
+
 
     	});
 
     }
 
     function gameOver() {
+    	$('#countMinus').html(count-1);
     	$('#gameOver').show();
         document.getElementById('start').disabled = false;
 
@@ -76,11 +76,12 @@ $(document).ready(function() {
 
     $('#start').click(function(e) {
         count = 0;
+        play = 0;
         sequence = [];
     	document.getElementById('start').disabled = true;
         $('#gameOver').hide();
     	++count;
-    	$('.count').html(count);
+    	$('#count').html(count);
     	nextMove();
     })
 
