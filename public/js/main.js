@@ -80,6 +80,7 @@ $(document).ready(function() {
         play = 0;
         sequence = [];
     	document.getElementById('start').disabled = true;
+    	$('#start').css('opacity', .6);
         $('#gameOver').hide();
         $('#gameOverText').hide();
     	++count;
