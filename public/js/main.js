@@ -13,7 +13,7 @@ $(document).ready(function() {
     var clicks = 0;
 
     function nextMove() {
-    	var random = Math.floor((Math.random() * 3) + 0);
+    	var random = Math.floor((Math.random() * 4) + 0);
     	sequence.push(buttons[random]);
     	setTimeout(function(){
     		execute();	
@@ -72,6 +72,7 @@ $(document).ready(function() {
     	$('#gameOver').show();
     	$('#gameOverText').show();
         document.getElementById('start').disabled = false;
+        $('#start').css('opacity', 1);
 
     }
 
