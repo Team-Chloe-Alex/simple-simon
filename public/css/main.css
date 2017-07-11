@@ -2,7 +2,12 @@ body {
 	font-family: 'Roboto Condensed';
 }
 
-#wapper {
+header {
+	font-family: 'Lobster Two', cursive;
+	font-size: 40px;
+}
+
+#wrapper {
 	display: block;
 	width: 100%;
 	clear: both;
@@ -71,35 +76,68 @@ h1 {
 
 #gameOver {
 	margin: 0 auto;
-	background-color: #d3d3d3;
 	width: 400px;
 	height: 400px;
 	border-radius: 100%;
-	position: fixed;
-	top: 5em;
+	position: relative;
+	top: -24.60em;
 	display: none;
-
+	background: #d3d3d3; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient( #fd8802, #ed1165, #991177); /* Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fd8802, #ed1165, #991177); /* For Opera 11.6 to 12.0 */
+    background: -moz-linear-gradient(#fd8802, #ed1165, #991177); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fd8802, #ed1165, #991177); /* Standard syntax (must be last) */
+    
 }
 
-#gameOver h2 {
+.spin {
+	margin: 0 auto;
+	width: 400px;
+	height: 400px;
+	border-radius: 100%;
 	position: relative;
-	top: 1em;
+	top: -24.60em;
+	display: none;
+	background: #d3d3d3; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient( #fd8802, #ed1165, #991177); /* Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fd8802, #ed1165, #991177); /* For Opera 11.6 to 12.0 */
+    background: -moz-linear-gradient(#fd8802, #ed1165, #991177); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fd8802, #ed1165, #991177); /* Standard syntax (must be last) */
+    -webkit-animation: rotation 2s infinite linear; 
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+.text h2 {
+	position: relative;
+	top: -20.00em;
 	left: 1.2em;
 	font-size: 60px;
+	color: black;
+	
 }
 
-#gameOver p {
+.text p {
 	position: relative;
-	top: .5em;
+	top: -19.60em;
 	left: .5em;
 	font-size: 40px;
+	color: white;
+	
 }
 
 footer {
 	position: relative;
 	text-align: center;
 	bottom: -10em;
-	background-color: #d3d3d3
+	background-color: #d3d3d3;
 }
 
 footer button, footer section {
@@ -115,4 +153,16 @@ footer button, footer section {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: 'Roboto Condensed';
+}
+
+#start:hover {
+	background-color: #33ddcc;
+
+}
+.counttext {
+	font-size: 16px;
+	font-family: 'Roboto Condensed';
+	color: white;
+
 }
