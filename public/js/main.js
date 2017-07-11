@@ -60,7 +60,7 @@ $(document).ready(function() {
 			    	play = 0;
 			    	$('.button').toggleClass('active');
 			    	++count;
-		    		$('#count').html(count);
+		    		$('.count').html(count);
 		    	}, 500, nextMove());
     		}
 
@@ -69,15 +69,18 @@ $(document).ready(function() {
     }
 
     function gameOver() {
-    	console.log("Game over");
-    	$('.button').toggleClass('active');
-    	return false;
+    	$('#gameOver').show();
+        document.getElementById('start').disabled = false;
+
     }
 
     $('#start').click(function(e) {
+        count = 0;
+        sequence = [];
     	document.getElementById('start').disabled = true;
+        $('#gameOver').hide();
     	++count;
-    	$('#count').html(count);
+    	$('.count').html(count);
     	nextMove();
     })
 
