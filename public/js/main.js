@@ -70,6 +70,7 @@ $(document).ready(function() {
     function gameOver() {
     	$('#countMinus').html(count-1);
     	$('#gameOver').show();
+    	$('#gameOverText').show();
         document.getElementById('start').disabled = false;
 
     }
@@ -80,6 +81,7 @@ $(document).ready(function() {
         sequence = [];
     	document.getElementById('start').disabled = true;
         $('#gameOver').hide();
+        $('#gameOverText').hide();
     	++count;
     	$('#count').html(count);
     	nextMove();
