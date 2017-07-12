@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 	'use strict';
 
+	//DECLARE VARIABLES
+	//GAME LOGIC STARTS AT BOTTOM OF FILE
+
 	var count = 0;
 
     var sequence = [];
@@ -12,6 +15,9 @@ $(document).ready(function() {
 
     var clicks = 0;
 
+    //RANDOMLY SELECT FROM BUTTONS[] AND PUSH TO SEQUENCE[]
+    //CALL EXECUTE FUNCTION
+
     function nextMove() {
     	var random = Math.floor((Math.random() * 4) + 0);
     	sequence.push(buttons[random]);
@@ -19,6 +25,9 @@ $(document).ready(function() {
     		execute();	
     	}, 500);
     }
+
+    //ITERATE THROUGH SEQUENCE[] AND HIGHLIGHT EACH BUTTON
+    //CALL PLAYGAME FUNCTION
 
     function execute() {
     	for (var i = 0; i < sequence.length; ++i) {
@@ -34,6 +43,10 @@ $(document).ready(function() {
     	$('.button').toggleClass('active');
     	playGame();
     }
+
+    //ADD LISTENER TO BUTTONS, CHECK CLICK EVENT AGAINST SEQUENCE[]
+    //IF CLICK AND SEQUENCE MATCH, CALL NEXTMOVE FUNCTION
+    //ELSE CALL GAMEOVER FUNCTION
 
     function playGame() {
     	play = 0;
@@ -62,10 +75,11 @@ $(document).ready(function() {
 		    	}, 500, nextMove());
     		}
 
-
     	});
 
     }
+
+    //SHOW GAMEOVER GRAPHICS, ENABLE START GAME BUTTON
 
     function gameOver() {
     	$('#countMinus').html(count-1);
@@ -75,6 +89,9 @@ $(document).ready(function() {
         $('#start').css('opacity', 1);
 
     }
+
+    //LISTENER FOR THE START GAME BUTTON
+    //INITIALIZE VARIABLES AND CALL NEXTMOVE FUNCTION
 
     $('#start').click(function(e) {
         count = 0;
